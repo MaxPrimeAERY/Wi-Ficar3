@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonPin11, buttonPin12, buttonPin13;
     private EditText editTextIPAddress, editTextPortNumber;
 
+
     public EditText getEditTextIPAddress() {
         return editTextIPAddress;
     }

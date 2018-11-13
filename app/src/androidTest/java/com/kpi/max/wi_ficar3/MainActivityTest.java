@@ -26,12 +26,6 @@ public class MainActivityTest {
 
 
     @Test
-    public void onCreateOptionsMenu() throws Exception {
-
-
-    }
-
-    @Test
     public void onOptionsItemSelected(MenuItem itemTest) throws Exception {
         assertEquals(itemTest.getItemId(), R.id.action_about);
     }
@@ -45,10 +39,6 @@ public class MainActivityTest {
         assertTrue(mainActivity.checkStr(testText2));
     }
 
-    @Test
-    public void sendRequest() throws Exception {
-
-    }
 
 
 }
