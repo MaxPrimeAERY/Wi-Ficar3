@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Wi-Fi Car</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_about">About:</string>
+    <string name="result_f">Result F:</string>
+    <string name="cyclic_algorithm">Cyclic Algorithm</string>
+    <string name="calculate">Calculate!</string>
+    <string name="_0">0</string>
+    <string name="enter_n">Enter N:</string>
+    <string name="enter_x">Enter X:</string>
+    <string name="result_y">Result Y:</string>
+    <string name="ramified_algorithm">Ramified Algorithm</string>
+    <string name="enter_a">Enter A:</string>
+    <string name="enter_b">Enter B:</string>
+    <string name="result_y1">Result Y1:</string>
+    <string name="linear_algorithm">Linear Algorithm</string>
+    <string name="enter_c">Enter C:</string>
+    <string name="algorithms">Algorithms</string>
+    <string name="variant_8">Variant #8</string>
+    <string name="enter_by_own">Enter by own</string>
+    <string name="load_from_file">Load from file</string>
+    <string name="search">Search:</string>
+    <string name="ok">Ok</string>
+
+</resources>
