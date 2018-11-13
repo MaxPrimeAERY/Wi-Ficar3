@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // объявление кнопок и текстовых полей ввода
     private Button buttonPin11, buttonPin12, buttonPin13;
     private EditText editTextIPAddress, editTextPortNumber;
+
+    public EditText getEditTextIPAddress() {
+        return editTextIPAddress;
+    }
+
     // общие объекты параметров, используемые для сохранения IP адреса и порта, чтобы
     // пользователь не вводил их в следующий раз, когда он открывает приложение
     SharedPreferences.Editor editor;
@@ -74,11 +79,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextPortNumber.setText(sharedPreferences.getString(PREF_PORT, ""));
 
         fMainActive = new MainActivity();
+        checkEdit(editTextIPAddress);
+
+
 /*
         fragT.add(R.id.container, fMainActive);
         fragT.commit();
 */
 
+    }
+
+    public boolean checkEdit(EditText field){
+        if (field == null){
+            return false;
+        }else{
+            return true;
+        }
     }
 
 
@@ -113,6 +129,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             new HttpRequestAsyncTask(
                     view.getContext(), parameterValue, ipAddress, portNumber, "pin"
             ).execute();
+        }
+        checkStr(ipAddress);
+    }
+
+    public boolean checkStr(String someText) {
+        if (someText.length() == 0) {
+            return false;
+        } else {
+            return true;
         }
     }
 
