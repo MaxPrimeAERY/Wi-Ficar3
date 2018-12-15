@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin:'base'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.kpi.max.wi_ficar3"
         minSdkVersion 15
@@ -34,8 +35,5 @@ dependencies {
     testCompile 'org.mockito:mockito-core:1.10.19'
     compile 'org.mockito:mockito-core:1.10.19'
     testCompile 'com.google.truth:truth:0.42'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.7'
-
-
-
+    compile 'com.fasterxml.jackson.core:jackson-core:2.9.7'
 }
