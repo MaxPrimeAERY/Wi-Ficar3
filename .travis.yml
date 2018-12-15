@@ -61,7 +61,6 @@ script:
   - docker pull maxprimeaery/wi-ficar3
   - docker run -d -p 127.0.0.1:80:4567 maxprimeaery/wi-ficar3 /bin/sh -c "cd /root/Wi-Ficar3; bundle exec foreman start;"
   - docker ps -a
-  - docker run maxprimeaery/wi-ficar3 /bin/sh -c "cd /root/Wi-Ficar3; bundle exec rake test"
 
 after_failure:
   - cat $TRAVIS_BUILD_DIR/app/build/reports/lint-results.xml-img-armeabi-v7a-android-17
