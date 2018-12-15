@@ -65,3 +65,4 @@ script:
 
 after_failure:
   - cat $TRAVIS_BUILD_DIR/app/build/reports/lint-results.xml-img-armeabi-v7a-android-17
+  
