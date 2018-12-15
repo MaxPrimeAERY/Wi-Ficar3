@@ -51,9 +51,6 @@ To enable Docker(like Terminal, Logcat, Build) go to "View-Tool Windows-Docker".
 #7. Input this commands<br>
 ```
 docker run --rm --volume=//C:/gradle/ --workdir=//C:/Users/Max/AndroidStudioProjects3/Wi-Ficar3 android-build:android-gradle gradle init //this command generates gradles files<br>
-```
-<br>
-```
 .\gradlew assembleDebug //this command builds apk <br>
 .\gradlew installDebug //installs apk to your phone <br>
 ```
