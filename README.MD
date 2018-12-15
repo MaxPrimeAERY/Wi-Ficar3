@@ -16,20 +16,27 @@
 
 Dockerizing project instruction for Windows!<br>
 #1. First of all you need to turn on Hyper-V on your machine.<br>
+```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V –All <br>
 bcdedit /set hypervisorlaunchtype auto <br>
+```
 #2. Create virtual network adapter<br>
 #3. Install Docker. Delete VirtualBox separately. Replace docker-machine.exe with older version 0.15 (recommended)<br>
 #4. Open CMD with Admin rights and input this line<br>
+```
 docker-machine create -d hyperv --hyperv-virtual-switch "Name_of_your_virtual_adapter" default <br>
+```
 Wait for installing. If you are stuck while downloading boot2docker.iso, copy it from Docker's folder and put it here<br>
 C:/Users/YOUR_USER_NAME/.docker/machine/cache/boot2docker.iso<br>
+```
 docker-machine create --hyperv-boot2docker-url file://C:/Users/YOUR_USER_NAME/.docker/machine/cache/boot2docker.iso -d hyperv --hyperv-virtual-switch "Name_of_your_virtual_adapter" default<br>
 BE SURE THAT COMMAND ABOVE IS WRITTEN IN ONE LINE <br>
+```
 #5. Enter this commands to use docker in CMD (You have to do it all the time when start CMD) <br>
+```
 docker-machine env --shell cmd default<br>
 @FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd default') DO @%i <br>
-<br>
+```
 <br>
 Now we can start building our Android App<br>
 #1. I would recommend you to download Docker plugin for Android Studio(BE SURE YOU HAVE LAST VERSION OF IT)<br>
@@ -42,8 +49,10 @@ To enable Docker(like Terminal, Logcat, Build) go to "View-Tool Windows-Docker".
 #5. Wait for downloading. It will take a while. <br>
 #6. Run CMD as Admin. cd to your project location (dont forget about #5 from previous instruction)<br>
 #7. Input this commands<br>
+```
 docker run --rm --volume=//C:/gradle/ --workdir=//C:/Users/Max/AndroidStudioProjects3/Wi-Ficar3 android-build:android-gradle gradle init //this command generates gradles files<br>
 <br>
 .\gradlew assembleDebug //this command builds apk <br>
 .\gradlew installDebug //installs apk to your phone <br>
+```
 #8. That's it. ENJOY :) <br>
