@@ -38,7 +38,6 @@ docker-machine env --shell cmd default<br>
 @FOR /f "tokens=*" %i IN ('docker-machine env --shell cmd default') DO @%i <br>
 ```
 <br>
-<br>
 Now we can start building our Android App<br>
 #1. I would recommend you to download Docker plugin for Android Studio(BE SURE YOU HAVE LAST VERSION OF IT)<br>
 #2. Configure it (in Android Studio settings)<br>
