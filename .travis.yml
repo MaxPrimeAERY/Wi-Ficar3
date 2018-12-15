@@ -36,6 +36,9 @@ cache:
   - "$HOME/.gradle/wrapper/"
   - "$HOME/.android/build-cache"
 
+services:
+  - docker
+
 before_install:
   - yes | sdkmanager "cmake;3.6.4111459"
   - wget https://dl.google.com/android/repository/android-ndk-r18b-linux-x86_64.zip
@@ -51,9 +54,14 @@ script:
   - echo no | android create avd --force -n test -t "android-"$ANDROID_EMULATOR_LEVEL --abi $ANDROID_ABI --tag $ANDROID_TAG
   - emulator -avd test -no-window &
   - mkdir -p build/reports
-#  - ./gradlew dependencyCheckAnalyze
   - android-wait-for-emulator
-#  - adb shell input keyevent 82 &
+
+  #Travis dependency
+
+  - docker pull maxprimeaery/wi-ficar3
+  - docker run -d -p 127.0.0.1:80:4567 maxprimeaery/wi-ficar3 /bin/sh -c "cd //C:/Users/Max/AndroidStudioProjects3/Wi-Ficar3; bundle exec foreman start;"
+  - docker ps -a
+  - docker run maxprimeaery/wi-ficar3 /bin/sh -c "cd //C:/Users/Max/AndroidStudioProjects3/Wi-Ficar3; bundle exec rake test"
 
 after_failure:
   - cat $TRAVIS_BUILD_DIR/app/build/reports/lint-results.xml-img-armeabi-v7a-android-17
